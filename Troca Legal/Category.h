@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PFObject.h"
 
 @interface Category : NSObject
 
-@property (nonatomic, strong) NSNumber *uuid;
+@property (nonatomic, strong) NSString *uuid;
 @property (nonatomic, strong) NSString *name;
+
+- (void) initOBject:(PFObject*) pfObject;
 
 @end

@@ -10,4 +10,11 @@
 
 @implementation User
 
+- (void)initOBject:(PFObject *)pfObject {
+    self.uuid = pfObject.objectId;
+    self.name = pfObject[@"name"];
+    self.name = pfObject[@"lastName"];
+    self.name = pfObject[@"email"];
+}
+
 @end
