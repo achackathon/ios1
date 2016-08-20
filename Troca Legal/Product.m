@@ -27,12 +27,6 @@
     
     PFObject *sellerObject  = [pfObject objectForKey:@"seller"];
     [self.seller initOBject:sellerObject];
-    
-    NSMutableArray *imagesArray = [pfObject  mutableArrayValueForKey:@"seller"];
-    
-    for (PFFile *item in imagesArray) {
-        [self.url addObject: [NSURL URLWithString:item.url]];
-    }
 }
 
 @end
