@@ -24,6 +24,11 @@
 		84CEBCC41D688E3D008D75A7 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCBA1D688E3D008D75A7 /* OpenSans-Semibold.ttf */; };
 		84CEBCC51D688E3D008D75A7 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCBB1D688E3D008D75A7 /* OpenSans-SemiboldItalic.ttf */; };
 		9D822E71629C7AE8816485A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A951DEC5C963821124A144 /* libPods.a */; };
+		0E24D8BF1D68878300212303 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8BE1D68878300212303 /* Brand.m */; };
+		0E24D8C21D6888A600212303 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8C11D6888A600212303 /* Category.m */; };
+		0E24D8C51D6888DA00212303 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8C41D6888DA00212303 /* Product.m */; };
+		0E24D8C81D688AB700212303 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8C71D688AB700212303 /* User.m */; };
+		0E24D8CB1D688F4D00212303 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8CA1D688F4D00212303 /* History.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,17 @@
 		84CEBCBB1D688E3D008D75A7 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		A4A951DEC5C963821124A144 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B034C46C8DBA0ECBD399FA14 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		0E24D8BD1D68878300212303 /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
+		0E24D8BE1D68878300212303 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
+		0E24D8C01D6888A600212303 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		0E24D8C11D6888A600212303 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		0E24D8C31D6888DA00212303 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		0E24D8C41D6888DA00212303 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		0E24D8C61D688AB700212303 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0E24D8C71D688AB700212303 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0E24D8C91D688F4D00212303 /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		0E24D8CA1D688F4D00212303 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,7 @@
 		0E24D8A41D687F3400212303 /* Troca Legal */ = {
 			isa = PBXGroup;
 			children = (
+				0E24D8BC1D68875100212303 /* model */,
 				0E24D8A81D687F3400212303 /* AppDelegate.h */,
 				0E24D8A91D687F3400212303 /* AppDelegate.m */,
 				0E24D8AE1D687F3400212303 /* Main.storyboard */,
@@ -139,6 +156,23 @@
 				A4A951DEC5C963821124A144 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0E24D8BC1D68875100212303 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0E24D8BD1D68878300212303 /* Brand.h */,
+				0E24D8BE1D68878300212303 /* Brand.m */,
+				0E24D8C01D6888A600212303 /* Category.h */,
+				0E24D8C11D6888A600212303 /* Category.m */,
+				0E24D8C31D6888DA00212303 /* Product.h */,
+				0E24D8C41D6888DA00212303 /* Product.m */,
+				0E24D8C61D688AB700212303 /* User.h */,
+				0E24D8C71D688AB700212303 /* User.m */,
+				0E24D8C91D688F4D00212303 /* History.h */,
+				0E24D8CA1D688F4D00212303 /* History.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +306,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E24D8C81D688AB700212303 /* User.m in Sources */,
+				0E24D8BF1D68878300212303 /* Brand.m in Sources */,
+				0E24D8C21D6888A600212303 /* Category.m in Sources */,
+				0E24D8C51D6888DA00212303 /* Product.m in Sources */,
 				0E24D8AA1D687F3400212303 /* AppDelegate.m in Sources */,
+				0E24D8CB1D688F4D00212303 /* History.m in Sources */,
 				0E24D8A71D687F3400212303 /* main.m in Sources */,
 				84CEBCB11D688A97008D75A7 /* LoginViewController.m in Sources */,
 			);
