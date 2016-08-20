@@ -37,9 +37,7 @@
 {
     _product = product;
     
-    if (product.url.count > 0) {
-        [self.imageView sd_setImageWithURL:product.url.firstObject];
-    }
+    [self.imageView sd_setImageWithURL:product.featuredImage.url];
     
     self.nameLabel.text = product.name;
     
@@ -47,7 +45,7 @@
     numberFormatter.decimalSeparator = @",";
     numberFormatter.maximumFractionDigits = 2;
     
-    self.priceLabel.text = [numberFormatter stringFromNumber:product.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"R$%@", [numberFormatter stringFromNumber:product.price]];
 }
 
 @end

@@ -30,11 +30,8 @@
         PFObject *sellerObject  = [pfObject objectForKey:@"seller"];
         self.seller = [[User alloc] initWithObject:sellerObject];
         
-        NSMutableArray *imagesArray = [pfObject mutableArrayValueForKey:@"seller"];
-        
-        for (PFFile *item in imagesArray) {
-            [self.url addObject: [NSURL URLWithString:item.url]];
-        }
+        PFObject *imageObject = [pfObject objectForKey:@"featuredImage"];
+        self.featuredImage = [[Image alloc] initWithObject:imageObject];
     }
     return self;
 }

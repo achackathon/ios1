@@ -10,6 +10,7 @@
 #import "Brand.h"
 #import "ProductCategory.h"
 #import "User.h"
+#import "Image.h"
 #import "PFObject.h"
 
 @interface Product : NSObject
@@ -24,6 +25,10 @@
 @property (nonatomic, strong) User *seller;
 @property (nonatomic, assign, getter=isForSell) BOOL forSell;
 @property (nonatomic, assign, getter=isForRent) BOOL forRent;
+@property (strong, nonatomic) Image *featuredImage;
+
+@property (strong, nonatomic) NSMutableArray<Image *> *images;
+
 
 - (instancetype)initWithObject:(PFObject *)pfObject;
 
