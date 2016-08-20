@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "PFUser.h"
 
 @interface LoginViewController ()
 
@@ -45,6 +46,19 @@
     _password.leftViewMode = UITextFieldViewModeAlways;
 }
 
+- (IBAction)login:(id)sender {
+    
+    [PFUser logInWithUsernameInBackground:@"Vendedor" password:@"12345678"
+                                    block:^(PFUser *user, NSError *error) {
+                                        if (user) {
+                                            NSLog(@"%@", [user objectForKey:@"location"]);
+                                        } else {
+                                            // The login failed. Check error to see why.
+                                        }
+                                    }];
+
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
