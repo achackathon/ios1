@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="16A294a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VMe-0U-7E0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VMe-0U-7E0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="MyriadPro-Regular.otf">
+            <string>MyriadPro-Regular</string>
             <string>MyriadPro-Regular</string>
         </mutableArray>
         <mutableArray key="OpenSans-Bold.ttf">
@@ -14,6 +15,9 @@
             <string>OpenSans-Bold</string>
         </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
@@ -75,11 +79,95 @@
                     </tabBar>
                     <connections>
                         <segue destination="lC1-vn-Ijg" kind="relationship" relationship="viewControllers" id="bSL-F9-gA7"/>
+                        <segue destination="pAm-Xt-4bH" kind="relationship" relationship="viewControllers" id="1ex-HM-3tk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w0q-tn-QB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="168.5" y="167.5"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Yzy-7S-X9R">
+            <objects>
+                <viewController id="pAm-Xt-4bH" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j0d-63-LvF"/>
+                        <viewControllerLayoutGuide type="bottom" id="iLM-nL-ObN"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lzh-gX-bE2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S5A-Tn-bl6" customClass="PAImageView">
+                                <rect key="frame" x="113" y="40" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="MMA-gi-LQl"/>
+                                    <constraint firstAttribute="height" constant="150" id="twT-hQ-aeV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGh-s6-uIf">
+                                <rect key="frame" x="20" y="201" width="335" height="28"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ig-en-7Fb">
+                                <rect key="frame" x="20" y="279" width="335" height="24"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-kg-mOj">
+                                <rect key="frame" x="20" y="311" width="347" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="B66-6I-U5j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ky8-aF-6Rz">
+                                <rect key="frame" x="0.0" y="557" width="375" height="61"/>
+                                <color key="backgroundColor" red="0.180392161" green="0.80000001190000003" blue="0.4431372583" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="8Cj-p6-KSb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="21.100000381469727"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="SAIR"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yGh-s6-uIf" firstAttribute="leading" secondItem="lzh-gX-bE2" secondAttribute="leading" constant="20" id="5S1-xa-xcd"/>
+                            <constraint firstAttribute="trailing" secondItem="eIF-kg-mOj" secondAttribute="trailing" constant="8" id="6mt-8B-J2h"/>
+                            <constraint firstItem="8Ig-en-7Fb" firstAttribute="top" secondItem="yGh-s6-uIf" secondAttribute="bottom" constant="50" id="8kv-X4-yaN"/>
+                            <constraint firstItem="Ky8-aF-6Rz" firstAttribute="leading" secondItem="lzh-gX-bE2" secondAttribute="leading" id="MOI-OB-RMv"/>
+                            <constraint firstAttribute="trailing" secondItem="8Ig-en-7Fb" secondAttribute="trailing" constant="20" id="XgB-xZ-UFF"/>
+                            <constraint firstItem="eIF-kg-mOj" firstAttribute="top" secondItem="8Ig-en-7Fb" secondAttribute="bottom" constant="8" id="ZVS-mS-PJ0"/>
+                            <constraint firstAttribute="trailing" secondItem="Ky8-aF-6Rz" secondAttribute="trailing" id="bsh-4W-P6e"/>
+                            <constraint firstItem="S5A-Tn-bl6" firstAttribute="centerX" secondItem="lzh-gX-bE2" secondAttribute="centerX" id="j5X-L6-87r"/>
+                            <constraint firstItem="S5A-Tn-bl6" firstAttribute="top" secondItem="lzh-gX-bE2" secondAttribute="top" constant="40" id="lTK-eU-bqY"/>
+                            <constraint firstAttribute="trailing" secondItem="yGh-s6-uIf" secondAttribute="trailing" constant="20" id="ngc-t5-PLf"/>
+                            <constraint firstItem="yGh-s6-uIf" firstAttribute="top" secondItem="S5A-Tn-bl6" secondAttribute="bottom" constant="11" id="vta-Xn-qgP"/>
+                            <constraint firstItem="eIF-kg-mOj" firstAttribute="leading" secondItem="lzh-gX-bE2" secondAttribute="leading" constant="20" id="wtd-C8-eRx"/>
+                            <constraint firstItem="8Ig-en-7Fb" firstAttribute="leading" secondItem="lzh-gX-bE2" secondAttribute="leading" constant="20" id="xdP-QR-mgK"/>
+                            <constraint firstItem="iLM-nL-ObN" firstAttribute="top" secondItem="Ky8-aF-6Rz" secondAttribute="bottom" id="xz8-KR-XRb"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="userIcon" id="PeW-Do-wZz">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="email" destination="8Ig-en-7Fb" id="Y62-mO-ui7"/>
+                        <outlet property="imagePicture" destination="S5A-Tn-bl6" id="ZLY-fy-idq"/>
+                        <outlet property="location" destination="eIF-kg-mOj" id="u0W-7e-JLw"/>
+                        <outlet property="name" destination="yGh-s6-uIf" id="r7m-jn-3Uy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vx4-rz-ZrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.5" y="1060.5"/>
         </scene>
         <!--Anúncios-->
         <scene sceneID="CSJ-xv-Xzu">
@@ -130,7 +218,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="160" height="73"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJF-Fa-hGG">
-                                                            <rect key="frame" x="15" y="0.0" width="130" height="49.5"/>
+                                                            <rect key="frame" x="15" y="0.0" width="130" height="50"/>
                                                             <string key="text">Paul Hewitt 
 watches</string>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
@@ -200,7 +288,7 @@ watches</string>
                                 </connections>
                             </collectionView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nenhum resultado encontrado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPA-6V-Bqg">
-                                <rect key="frame" x="65" y="322" width="245" height="23.5"/>
+                                <rect key="frame" x="65" y="322" width="245" height="24"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -270,7 +358,7 @@ watches</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGg-r5-6Id">
-                                <rect key="frame" x="20" y="116" width="46.5" height="22"/>
+                                <rect key="frame" x="20" y="116" width="47" height="22"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -285,7 +373,7 @@ watches</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="De" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Jo-uf-rOR" customClass="PATextField">
-                                <rect key="frame" x="20" y="254" width="157.5" height="40"/>
+                                <rect key="frame" x="20" y="254" width="158" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="NmL-xp-W6o"/>
                                 </constraints>
@@ -296,7 +384,7 @@ watches</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Até" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Qp-QG-aRL" customClass="PATextField">
-                                <rect key="frame" x="197.5" y="254" width="157.5" height="40"/>
+                                <rect key="frame" x="198" y="254" width="157" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hQR-2L-44i"/>
                                 </constraints>
@@ -307,7 +395,7 @@ watches</string>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1g6-Vs-nSv">
-                                <rect key="frame" x="20" y="212" width="42.5" height="22"/>
+                                <rect key="frame" x="20" y="212" width="43" height="22"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -399,7 +487,7 @@ watches</string>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggm-Uh-Lj3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leX-1k-8xG" userLabel="Content View">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="leX-1k-8xG" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0C-fS-aRg" userLabel="Header">
@@ -526,13 +614,13 @@ watches</string>
                                                 <rect key="frame" x="0.0" y="280" width="375" height="52"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gabana Suit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8h-yO-n7u">
-                                                        <rect key="frame" x="20" y="16" width="254" height="19.5"/>
+                                                        <rect key="frame" x="20" y="16" width="254" height="20"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="R$399 / dia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFB-dB-CJd">
-                                                        <rect key="frame" x="282" y="16" width="73" height="19.5"/>
+                                                        <rect key="frame" x="282" y="16" width="73" height="20"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -562,17 +650,17 @@ watches</string>
                                                     <segue destination="hOi-m8-0Gu" kind="show" identifier="purchase" id="fNP-TO-LNA"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2k-kl-xfV" userLabel="Info">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2k-kl-xfV" userLabel="Info">
                                                 <rect key="frame" x="0.0" y="394" width="375" height="112"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-go-I4v">
-                                                        <rect key="frame" x="20" y="15" width="31.5" height="23.5"/>
+                                                        <rect key="frame" x="20" y="15" width="32" height="24"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buT-go-DqI">
-                                                        <rect key="frame" x="20" y="53.5" width="335" height="38.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buT-go-DqI">
+                                                        <rect key="frame" x="20" y="54" width="335" height="38"/>
                                                         <string key="text">The best quality of the suit you
 can ever find...</string>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
@@ -582,7 +670,7 @@ can ever find...</string>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="two-crutches" translatesAutoresizingMaskIntoConstraints="NO" id="hhU-lY-d99">
                                                         <rect key="frame" x="328" y="15" width="27" height="34"/>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psc-WT-eXA" userLabel="Separator">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psc-WT-eXA" userLabel="Separator">
                                                         <rect key="frame" x="0.0" y="111" width="375" height="1"/>
                                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -610,7 +698,7 @@ can ever find...</string>
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-Hj-Gy6" userLabel="Seller">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-Hj-Gy6" userLabel="Seller">
                                                 <rect key="frame" x="0.0" y="506" width="375" height="83"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="862-Zt-JMZ" customClass="PAImageView">
@@ -621,7 +709,7 @@ can ever find...</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jhoana Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARe-yj-fWn">
-                                                        <rect key="frame" x="64" y="18" width="91.5" height="23.5"/>
+                                                        <rect key="frame" x="64" y="18" width="92" height="24"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -630,7 +718,7 @@ can ever find...</string>
                                                         <rect key="frame" x="20" y="57" width="11" height="16"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belo Horizonte, MG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKG-2M-lqy">
-                                                        <rect key="frame" x="39" y="55" width="127" height="19.5"/>
+                                                        <rect key="frame" x="39" y="55" width="127" height="20"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                         <color key="textColor" red="0.74117647058823533" green="0.75686274509803919" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -762,13 +850,13 @@ can ever find...</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gabana Suit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U6-8a-8YM">
-                                        <rect key="frame" x="20" y="16" width="254" height="19.5"/>
+                                        <rect key="frame" x="20" y="16" width="254" height="20"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="R$399 / dia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEW-wB-q7W">
-                                        <rect key="frame" x="282" y="16" width="73" height="19.5"/>
+                                        <rect key="frame" x="282" y="16" width="73" height="20"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -795,7 +883,7 @@ can ever find...</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jhoana Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZO-xF-C4M">
-                                        <rect key="frame" x="64" y="18" width="91.5" height="23.5"/>
+                                        <rect key="frame" x="64" y="18" width="92" height="24"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -804,7 +892,7 @@ can ever find...</string>
                                         <rect key="frame" x="20" y="57" width="11" height="16"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belo Horizonte, MG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIk-i9-9lJ">
-                                        <rect key="frame" x="39" y="55" width="127" height="19.5"/>
+                                        <rect key="frame" x="39" y="55" width="127" height="20"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <color key="textColor" red="0.74117647060000003" green="0.75686274509999996" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -837,17 +925,17 @@ can ever find...</string>
                                     <constraint firstItem="FSb-RY-JPv" firstAttribute="leading" secondItem="NaD-uM-d7V" secondAttribute="leading" id="mli-nb-jld"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7B-8N-cS8">
-                                <rect key="frame" x="89.5" y="135" width="196" height="40"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7B-8N-cS8">
+                                <rect key="frame" x="90" y="135" width="196" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alugar por " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VB-2X-iKi">
-                                        <rect key="frame" x="0.0" y="10" width="84.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="10" width="85" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dzB-gm-vt6" customClass="PATextField">
-                                        <rect key="frame" x="89.5" y="0.0" width="70" height="40"/>
+                                        <rect key="frame" x="90" y="0.0" width="70" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="40i-Q1-Zj6"/>
                                             <constraint firstAttribute="width" constant="70" id="6V9-hp-RAC"/>
@@ -858,8 +946,8 @@ can ever find...</string>
                                             <outlet property="delegate" destination="hOi-m8-0Gu" id="5eG-Bg-auh"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pch-SJ-Qzc">
-                                        <rect key="frame" x="164.5" y="10" width="31.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="dias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pch-SJ-Qzc">
+                                        <rect key="frame" x="165" y="10" width="31" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -885,17 +973,17 @@ can ever find...</string>
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpF-e9-Irv">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SpF-e9-Irv">
                                 <rect key="frame" x="110" y="210" width="155" height="33"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-ra-VeL">
-                                        <rect key="frame" x="0.0" y="6.5" width="37.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-ra-VeL">
+                                        <rect key="frame" x="0.0" y="7" width="38" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 200,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-UM-EsC">
-                                        <rect key="frame" x="45.5" y="0.0" width="109.5" height="33"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="R$ 200,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-UM-EsC">
+                                        <rect key="frame" x="46" y="0.0" width="109" height="33"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="24"/>
                                         <color key="textColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -990,13 +1078,13 @@ can ever find...</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENDEREÇO DE EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCB-tQ-bmF">
-                                <rect key="frame" x="50" y="243" width="144.5" height="19.5"/>
+                                <rect key="frame" x="50" y="243" width="145" height="20"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14.100000381469727"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Endereço de email cadastrado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-mg-8fh">
-                                <rect key="frame" x="50" y="283" width="275.5" height="54"/>
+                                <rect key="frame" x="50" y="283" width="276" height="54"/>
                                 <color key="tintColor" red="0.74117648599999997" green="0.75686275960000005" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="FwG-Sb-AgI"/>
@@ -1012,7 +1100,7 @@ can ever find...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sua senha de usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIo-hg-946">
-                                <rect key="frame" x="50" y="399" width="279.5" height="54"/>
+                                <rect key="frame" x="50" y="399" width="280" height="54"/>
                                 <color key="tintColor" red="0.74117648599999997" green="0.75686275960000005" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="sea-Tq-VxF"/>
@@ -1075,5 +1163,6 @@ can ever find...</string>
         <image name="productsTabBarIcon" width="24" height="24"/>
         <image name="shopCart" width="15" height="14"/>
         <image name="two-crutches" width="27" height="34"/>
+        <image name="userIcon" width="24" height="24"/>
     </resources>
 </document>
