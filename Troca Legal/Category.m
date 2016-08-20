@@ -10,4 +10,9 @@
 
 @implementation Category
 
+- (void)initOBject:(PFObject *)pfObject {
+    self.uuid = pfObject.objectId;
+    self.name = pfObject[@"name"];
+}
+
 @end

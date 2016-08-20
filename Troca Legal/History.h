@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "Product.h"
+#import "PFObject.h"
 
 @interface History : NSObject
 
-@property (nonatomic, strong) NSNumber *uuid;
+@property (nonatomic, strong) NSString *uuid;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Product *product;
+
+- (void) initOBject:(PFObject*) pfObject;
 
 @end
