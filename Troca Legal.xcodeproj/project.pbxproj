@@ -18,6 +18,8 @@
 		0E24D8C81D688AB700212303 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8C71D688AB700212303 /* User.m */; };
 		0E24D8CB1D688F4D00212303 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8CA1D688F4D00212303 /* History.m */; };
 		0E24D8CE1D68C5DD00212303 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8CD1D68C5DD00212303 /* Image.m */; };
+		0E24D8D21D68E77900212303 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8D01D68E77900212303 /* ProfileViewController.m */; };
+		0E24D8D31D68E77900212303 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D8D11D68E77900212303 /* ProfileViewController.xib */; };
 		849700D31D68E1B7000E82B4 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D21D68E1B7000E82B4 /* ImageCell.m */; };
 		849700D61D68E784000E82B4 /* PATextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D51D68E784000E82B4 /* PATextField.m */; };
 		849700D91D68E889000E82B4 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D81D68E889000E82B4 /* FilterViewController.m */; };
@@ -63,6 +65,9 @@
 		0E24D8CA1D688F4D00212303 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		0E24D8CC1D68C5DD00212303 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		0E24D8CD1D68C5DD00212303 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		0E24D8CF1D68E77900212303 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		0E24D8D01D68E77900212303 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		0E24D8D11D68E77900212303 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		5BA01D0C128589EBAE2F9A43 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		849700D11D68E1B7000E82B4 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		849700D21D68E1B7000E82B4 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
@@ -164,6 +169,9 @@
 				0E24D8B31D687F3400212303 /* LaunchScreen.storyboard */,
 				0E24D8B61D687F3400212303 /* Info.plist */,
 				0E24D8A51D687F3400212303 /* Supporting Files */,
+				0E24D8CF1D68E77900212303 /* ProfileViewController.h */,
+				0E24D8D01D68E77900212303 /* ProfileViewController.m */,
+				0E24D8D11D68E77900212303 /* ProfileViewController.xib */,
 			);
 			path = "Troca Legal";
 			sourceTree = "<group>";
@@ -306,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E24D8D31D68E77900212303 /* ProfileViewController.xib in Resources */,
 				84CEBCC41D688E3D008D75A7 /* OpenSans-Semibold.ttf in Resources */,
 				84CEBCC51D688E3D008D75A7 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				0E24D8B51D687F3400212303 /* LaunchScreen.storyboard in Resources */,
@@ -380,6 +389,7 @@
 				84CEBCCD1D689856008D75A7 /* ProductsViewController.m in Sources */,
 				849700D31D68E1B7000E82B4 /* ImageCell.m in Sources */,
 				849700D61D68E784000E82B4 /* PATextField.m in Sources */,
+				0E24D8D21D68E77900212303 /* ProfileViewController.m in Sources */,
 				84CEBCD11D68A1A7008D75A7 /* PAImageView.m in Sources */,
 				0E24D8C81D688AB700212303 /* User.m in Sources */,
 				0E24D8BF1D68878300212303 /* Brand.m in Sources */,
