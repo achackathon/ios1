@@ -18,6 +18,7 @@
     NSArray *categories;
     NSArray *periods;
     PFObject *category;
+    NSString *period;
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *productDescription;
@@ -97,8 +98,7 @@
 }
 - (IBAction)saveProduct:(id)sender {
     
-    NSMutableArray *saveArray = [NSMutableArray array];
-    
+
     PFObject *product = [PFObject objectWithClassName:@"Product"];
     product[@"productDescription"] = _productDescription.text;
     product[@"model"] = _productName.text;
@@ -111,7 +111,7 @@
     NSNumber *isForSell = [NSNumber numberWithBool: _isForSell.isOn];
     
     product[@"isForRent"] = isForRent;
-    product[@"isForSell"] = isForSell;
+    product[@"isForBuy"] = isForSell;
     
     product[@"price"] = _productPrice.value;
     
@@ -119,65 +119,73 @@
     
     product[@"category"] = category;
     
+    product[@"rentFrequency"] = period;
     
-    [saveArray addObject:product];
-    
-    
-    if (!_image1.hidden && _image1.image != nil) {
+    [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         
-        
-        NSData* data = UIImageJPEGRepresentation(_image1.image, 0.5f);
-        PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
-        
-        PFObject *image = [PFObject objectWithClassName:@"Images"];
-        [image setObject:imageFile forKey:@"image"];
-        [image setObject:product forKey:@"product"];
-        
-        product[@"featuredImage"] = image;
-        
-//        [saveArray addObject:image];
-
-    }
-    
-    if (!_image2.hidden && _image2.image != nil) {
-        
-        NSData* data = UIImageJPEGRepresentation(_image2.image, 0.5f);
-        PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
-        
-        PFObject *image = [PFObject objectWithClassName:@"Images"];
-        [image setObject:imageFile forKey:@"image"];
-        [image setObject:product forKey:@"product"];
-        
-        product[@"featuredImage"] = image;
-        
-//        [saveArray addObject:image];
-    }
-    
-    if (!_image3.hidden && _image3.image != nil) {
-    
-        NSData* data = UIImageJPEGRepresentation(_image3.image, 0.5f);
-        PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
-        
-        PFObject *image = [PFObject objectWithClassName:@"Images"];
-        [image setObject:imageFile forKey:@"image"];
-        [image setObject:product forKey:@"product"];
-        
-        product[@"featuredImage"] = image;
-        
-//        [saveArray addObject:image];
-    }
-    
-    [PFObject saveAllInBackground:saveArray block:^(BOOL succeeded, NSError * _Nullable error) {
-       
         if (succeeded) {
             
+            NSMutableArray *saveArray = [NSMutableArray array];
+            
+            if (!_image1.hidden && _image1.image != nil) {
+                
+                
+                NSData* data = UIImageJPEGRepresentation(_image1.image, 0.5f);
+                PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
+                
+                PFObject *image = [PFObject objectWithClassName:@"Images"];
+                [image setObject:imageFile forKey:@"image"];
+                [image setObject:product forKey:@"product"];
+                
+                [saveArray addObject:image];
+                
+            }
+            
+            if (!_image2.hidden && _image2.image != nil) {
+                
+                NSData* data = UIImageJPEGRepresentation(_image2.image, 0.5f);
+                PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
+                
+                PFObject *image = [PFObject objectWithClassName:@"Images"];
+                [image setObject:imageFile forKey:@"image"];
+                [image setObject:product forKey:@"product"];
+                
+                [saveArray addObject:image];
+            }
+            
+            if (!_image3.hidden && _image3.image != nil) {
+                
+                NSData* data = UIImageJPEGRepresentation(_image3.image, 0.5f);
+                PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
+                
+                PFObject *image = [PFObject objectWithClassName:@"Images"];
+                [image setObject:imageFile forKey:@"image"];
+                [image setObject:product forKey:@"product"];
+                
+                
+                [saveArray addObject:image];
+            }
+            
+            [PFObject saveAllInBackground:saveArray block:^(BOOL succeeded, NSError * _Nullable error) {
+                
+                if (succeeded) {
+                    
+                    if ([saveArray count] > 0) {
+                        product[@"featuredImage"] = saveArray.firstObject;
+                        [product saveInBackground];
+                    }
+                    
+                }
+                
+                else {
+                    NSLog(@"%@", [error localizedDescription]);
+                }
+                
+            }];
+            
         }
-        
-        else {
-            NSLog(@"%@", [error localizedDescription]);
-        }
-        
     }];
+    
     
 }
 
@@ -322,6 +330,7 @@
     
     else {
         _rentFrequency.text = (NSString *) [periods objectAtIndex:row];
+        period = (NSString *) [periods objectAtIndex:row];
     }
     
     
