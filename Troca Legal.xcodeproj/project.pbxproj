@@ -24,6 +24,7 @@
 		849700D91D68E889000E82B4 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D81D68E889000E82B4 /* FilterViewController.m */; };
 		849700DC1D68E8A8000E82B4 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700DB1D68E8A8000E82B4 /* Filter.m */; };
 		849700DF1D68F48E000E82B4 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700DE1D68F48E000E82B4 /* PurchaseViewController.m */; };
+		2F813B471D68DEE000F35E4C /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F813B461D68DEE000F35E4C /* NewProductViewController.m */; };
 		84CEBCB11D688A97008D75A7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEBCB01D688A97008D75A7 /* LoginViewController.m */; };
 		84CEBCBC1D688E3D008D75A7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCB21D688E3D008D75A7 /* OpenSans-Bold.ttf */; };
 		84CEBCBD1D688E3D008D75A7 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCB31D688E3D008D75A7 /* OpenSans-BoldItalic.ttf */; };
@@ -66,6 +67,8 @@
 		0E24D8CD1D68C5DD00212303 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		0E24D8CF1D68E77900212303 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		0E24D8D01D68E77900212303 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		2F813B451D68DEE000F35E4C /* NewProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductViewController.h; sourceTree = "<group>"; };
+		2F813B461D68DEE000F35E4C /* NewProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductViewController.m; sourceTree = "<group>"; };
 		5BA01D0C128589EBAE2F9A43 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		849700D11D68E1B7000E82B4 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		849700D21D68E1B7000E82B4 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				0E24D8A51D687F3400212303 /* Supporting Files */,
 				0E24D8CF1D68E77900212303 /* ProfileViewController.h */,
 				0E24D8D01D68E77900212303 /* ProfileViewController.m */,
+				2F813B451D68DEE000F35E4C /* NewProductViewController.h */,
+				2F813B461D68DEE000F35E4C /* NewProductViewController.m */,
 			);
 			path = "Troca Legal";
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 					0E24D8A11D687F3400212303 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6D995M6B5M;
+						DevelopmentTeam = CPR2D2WM47;
 					};
 				};
 			};
@@ -399,6 +405,7 @@
 				84CEBCCA1D6893E0008D75A7 /* ProductCell.m in Sources */,
 				849700DF1D68F48E000E82B4 /* PurchaseViewController.m in Sources */,
 				0E24D8CB1D688F4D00212303 /* History.m in Sources */,
+				2F813B471D68DEE000F35E4C /* NewProductViewController.m in Sources */,
 				0E24D8A71D687F3400212303 /* main.m in Sources */,
 				84CEBCB11D688A97008D75A7 /* LoginViewController.m in Sources */,
 				84CEBCD71D68C2DE008D75A7 /* Helper.m in Sources */,
@@ -515,11 +522,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6D995M6B5M;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Troca Legal/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hackaton.Troca-Legal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -529,11 +539,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6D995M6B5M;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Troca Legal/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hackaton.Troca-Legal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
