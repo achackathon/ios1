@@ -1,12 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="16A294a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Am1-im-RWU">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="MyriadPro-Regular.otf">
+            <string>MyriadPro-Regular</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
+        </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
@@ -19,24 +28,6 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="z64-dH-eQD">
             <objects>
@@ -328,7 +319,8 @@ watches</string>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buT-go-DqI">
                                                         <rect key="frame" x="20" y="48.5" width="201" height="38.5"/>
-                                                        <string key="text">The best quality of the suit youcan ever find...</string>
+                                                        <string key="text">The best quality of the suit you
+can ever find...</string>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                         <color key="textColor" red="0.74117647058823533" green="0.75686274509803919" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -478,6 +470,107 @@ watches</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwz-Tw-fly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1820.5" y="167.5"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="g0v-Hg-iBF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ya-Eg-QKc" sceneMemberID="firstResponder"/>
+                <viewController id="b1P-8N-eGd" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PFc-D0-gZT"/>
+                        <viewControllerLayoutGuide type="bottom" id="vIl-D5-886"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="63a-xZ-SDK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlG-VY-eik">
+                                <rect key="frame" x="0.0" y="606" width="375" height="61"/>
+                                <color key="backgroundColor" red="0.180392161" green="0.80000001190000003" blue="0.4431372583" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="maR-SE-aKT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="21.100000381469727"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ENTRAR"/>
+                                <connections>
+                                    <segue destination="VMe-0U-7E0" kind="presentation" id="Nwk-cr-c4C"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENDEREÇO DE EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCB-tQ-bmF">
+                                <rect key="frame" x="50" y="243" width="144.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14.100000381469727"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Endereço de email cadastrado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-mg-8fh">
+                                <rect key="frame" x="50" y="283" width="275.5" height="54"/>
+                                <color key="tintColor" red="0.74117648599999997" green="0.75686275960000005" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="FwG-Sb-AgI"/>
+                                </constraints>
+                                <color key="textColor" red="0.74117648599999997" green="0.75686275960000005" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17.600000381469727"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SENHA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ger-ZK-had">
+                                <rect key="frame" x="50" y="359" width="48" height="20"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14.100000381469727"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sua senha de usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIo-hg-946">
+                                <rect key="frame" x="50" y="399" width="279.5" height="54"/>
+                                <color key="tintColor" red="0.74117648599999997" green="0.75686275960000005" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="sea-Tq-VxF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17.600000381469727"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ger-ZK-had" firstAttribute="leading" secondItem="jCB-tQ-bmF" secondAttribute="leading" id="8qH-SD-w2N"/>
+                            <constraint firstItem="lIo-hg-946" firstAttribute="top" secondItem="ger-ZK-had" secondAttribute="bottom" constant="20" id="92R-QA-3wj"/>
+                            <constraint firstAttribute="trailing" secondItem="cVX-mg-8fh" secondAttribute="trailing" constant="49.5" id="BYG-B7-eoU"/>
+                            <constraint firstItem="cVX-mg-8fh" firstAttribute="top" secondItem="jCB-tQ-bmF" secondAttribute="bottom" constant="20.5" id="CZY-73-ss5"/>
+                            <constraint firstItem="ger-ZK-had" firstAttribute="top" secondItem="cVX-mg-8fh" secondAttribute="bottom" constant="22" id="Fc9-ab-a3t"/>
+                            <constraint firstItem="vIl-D5-886" firstAttribute="top" secondItem="rlG-VY-eik" secondAttribute="bottom" id="NTH-3S-2pH"/>
+                            <constraint firstItem="rlG-VY-eik" firstAttribute="leading" secondItem="63a-xZ-SDK" secondAttribute="leading" id="RJd-lV-4Mj"/>
+                            <constraint firstItem="lIo-hg-946" firstAttribute="trailing" secondItem="cVX-mg-8fh" secondAttribute="trailing" constant="4" id="Wgf-NS-lu2"/>
+                            <constraint firstItem="jCB-tQ-bmF" firstAttribute="leading" secondItem="63a-xZ-SDK" secondAttribute="leading" constant="50" id="Xa5-l4-tsJ"/>
+                            <constraint firstItem="cVX-mg-8fh" firstAttribute="leading" secondItem="63a-xZ-SDK" secondAttribute="leading" constant="50" id="gTh-ix-QeS"/>
+                            <constraint firstItem="jCB-tQ-bmF" firstAttribute="top" secondItem="PFc-D0-gZT" secondAttribute="bottom" constant="179" id="kVq-vx-Mee"/>
+                            <constraint firstItem="lIo-hg-946" firstAttribute="leading" secondItem="cVX-mg-8fh" secondAttribute="leading" id="rIi-2p-wkP"/>
+                            <constraint firstAttribute="trailing" secondItem="rlG-VY-eik" secondAttribute="trailing" id="xcG-ag-Eu9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="Trk-rU-rr8"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailAddress" destination="cVX-mg-8fh" id="5Eh-qG-G0m"/>
+                        <outlet property="password" destination="lIo-hg-946" id="10x-lA-Zvn"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="292.5" y="167.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oxl-bi-5M7">
+            <objects>
+                <navigationController id="Am1-im-RWU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z7m-Qa-QZB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="b1P-8N-eGd" kind="relationship" relationship="rootViewController" id="Rhp-M2-f3f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLb-wm-wNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-328" y="168"/>
         </scene>
     </scenes>
     <resources>

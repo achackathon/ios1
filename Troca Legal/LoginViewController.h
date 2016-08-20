@@ -2,7 +2,7 @@
 //  LoginViewController.h
 //  Troca Legal
 //
-//  Created by Jota Melo on 20/08/16.
+//  Created by Matheus C. Candido on 8/20/16.
 //  Copyright © 2016 Avenue Code Brazil. All rights reserved.
 //
 
