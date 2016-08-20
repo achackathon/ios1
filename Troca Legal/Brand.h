@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSString *uuid;
 @property (nonatomic, strong) NSString *name;
 
-- (void) initOBject:(PFObject*) pfObject;
+- (instancetype)initWithObject:(PFObject *)pfObject;
 
 @end

@@ -12,7 +12,7 @@
 
 #import "Product.h"
 
-@interface ProductViewController ()
+@interface ProductViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *imagesScrollView;
 @property (weak, nonatomic) IBOutlet UIView *imagesScrollViewContentView;
@@ -49,6 +49,25 @@
     NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
     numberFormatter.decimalSeparator = @",";
     numberFormatter.maximumFractionDigits = 2;
+    
+    if (self.product.isForSell) {
+        self.priceLabel.text = [NSString stringWithFormat:@"R$%@", [numberFormatter stringFromNumber:self.product.price]];
+        [self.actionButton setTitle:NSLocalizedString(@"COMPRAR", @"") forState:UIControlStateNormal];
+    } else if (self.product.isForRent) {
+        self.priceLabel.text = [NSString stringWithFormat:@"R$%@ / dia", [numberFormatter stringFromNumber:self.product.price]];
+        [self.actionButton setTitle:NSLocalizedString(@"ALUGAR", @"") forState:UIControlStateNormal];
+    }
+    
+    self.descriptionLabel.text = self.product.productDescription;
+    
+    if ([self.product.category.name isEqualToString:@"Muletas"]) {
+        self.typeImageView.image = [UIImage imageNamed:@"two-crutches"];
+    } else if ([self.product.category.name isEqualToString:@"Cadeira de Rodas"]) {
+        self.typeImageView.image = [UIImage imageNamed:@"wheelchair"];
+    }
+    
+    self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.product.seller.name, self.product.seller.lastName];
+    self.locationLabel.text = self.product.seller.location;
 }
 
 - (void)addImageViews
@@ -114,6 +133,14 @@
         
         previousImageView = imageView;
     }
+}
+
+#pragma mark - Scroll View delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSUInteger page = roundf(scrollView.contentOffset.x / self.view.frame.size.width);
+    self.imagesPageControl.currentPage = page;
 }
 
 @end

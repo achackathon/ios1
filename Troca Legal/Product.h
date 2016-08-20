@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Brand.h"
-#import "Category.h"
+#import "ProductCategory.h"
 #import "User.h"
 #import "PFObject.h"
 
@@ -19,12 +19,12 @@
 @property (nonatomic, strong) NSString *productDescription;
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) Brand *brand;
-@property (nonatomic, strong) Category *category;
+@property (nonatomic, strong) ProductCategory *category;
 @property (nonatomic, strong) NSMutableArray *url;
 @property (nonatomic, strong) User *seller;
-@property (nonatomic, assign, getter=isForCell) BOOL forCell;
+@property (nonatomic, assign, getter=isForSell) BOOL forSell;
 @property (nonatomic, assign, getter=isForRent) BOOL forRent;
 
-- (void) initOBject:(PFObject*) pfObject;
+- (instancetype)initWithObject:(PFObject *)pfObject;
 
 @end

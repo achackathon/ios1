@@ -11,28 +11,32 @@
 
 @implementation Product
 
-- (void)initOBject:(PFObject *)pfObject {
-    self.uuid = pfObject.objectId;
-    self.name = pfObject[@"name"];
-    self.productDescription = pfObject[@"productDescription"];
-    self.price = @([[pfObject objectForKey:@"price"] doubleValue]);
-    self.forCell = @([[pfObject objectForKey:@"isForCell"] boolValue]);
-    self.forRent = @([[pfObject objectForKey:@"isForRent"] boolValue]);
-    
-    PFObject *categoryObject = [pfObject objectForKey:@"category"];
-    [self.category initOBject:categoryObject];
-    
-    PFObject *brandObject = [pfObject objectForKey:@"brand"];
-    [self.brand initOBject:brandObject];
-    
-    PFObject *sellerObject  = [pfObject objectForKey:@"seller"];
-    [self.seller initOBject:sellerObject];
-    
-    NSMutableArray *imagesArray = [pfObject  mutableArrayValueForKey:@"seller"];
-    
-    for (PFFile *item in imagesArray) {
-        [self.url addObject: [NSURL URLWithString:item.url]];
+- (instancetype)initWithObject:(PFObject *)pfObject {
+    self = [super init];
+    if (self) {
+        self.uuid = pfObject.objectId;
+        self.name = pfObject[@"model"];
+        self.productDescription = pfObject[@"productDescription"];
+        self.price = @([[pfObject objectForKey:@"price"] doubleValue]);
+        self.forSell = @([[pfObject objectForKey:@"isForSell"] boolValue]);
+        self.forRent = @([[pfObject objectForKey:@"isForRent"] boolValue]);
+        
+        PFObject *categoryObject = [pfObject objectForKey:@"category"];
+        self.category = [[ProductCategory alloc] initWithObject:categoryObject];
+        
+        PFObject *brandObject = [pfObject objectForKey:@"brand"];
+        self.brand = [[Brand alloc] initWithObject:brandObject];
+        
+        PFObject *sellerObject  = [pfObject objectForKey:@"seller"];
+        self.seller = [[User alloc] initWithObject:sellerObject];
+        
+        NSMutableArray *imagesArray = [pfObject mutableArrayValueForKey:@"seller"];
+        
+        for (PFFile *item in imagesArray) {
+            [self.url addObject: [NSURL URLWithString:item.url]];
+        }
     }
+    return self;
 }
 
 @end

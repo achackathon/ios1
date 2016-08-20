@@ -15,7 +15,8 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *location;
 
-- (void) initOBject:(PFObject*) pfObject;
+- (instancetype)initWithObject:(PFObject *)pfObject;
 
 @end

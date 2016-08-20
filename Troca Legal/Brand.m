@@ -10,9 +10,13 @@
 
 @implementation Brand
 
-- (void)initOBject:(PFObject *)pfObject {
-    self.uuid = pfObject.objectId;
-    self.name = pfObject[@"name"];
+- (instancetype)initWithObject:(PFObject *)pfObject {
+    self = [super init];
+    if (self) {
+        self.uuid = pfObject.objectId;
+        self.name = pfObject[@"name"];
+    }
+    return self;
 }
 
 @end

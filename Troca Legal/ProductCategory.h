@@ -1,5 +1,5 @@
 //
-//  Category.h
+//  ProductCategory.h
 //  Troca Legal
 //
 //  Created by Avenue Code Brazil on 8/20/16.
@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "PFObject.h"
 
-@interface Category : NSObject
+@interface ProductCategory : NSObject
 
 @property (nonatomic, strong) NSString *uuid;
 @property (nonatomic, strong) NSString *name;
 
-- (void) initOBject:(PFObject*) pfObject;
+- (instancetype)initWithObject:(PFObject *)pfObject;
 
 @end

@@ -9,8 +9,11 @@
 #import "ProductsViewController.h"
 
 #import "ProductCell.h"
+#import "MBProgressHUD.h"
 
 #import "Product.h"
+#import "Helper.h"
+#import <Parse/Parse.h>
 
 static CGFloat const kCellSpacing = 17.f;
 
@@ -29,6 +32,34 @@ static CGFloat const kCellSpacing = 17.f;
     [super viewDidLoad];
     
     [self.view layoutIfNeeded];
+    
+    self.navigationItem.rightBarButtonItem = [Helper barButtonWithImage:[UIImage imageNamed:@"filter-results-button"] target:self andAction:@selector(openFilter)];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self refresh];
+}
+
+- (void)refresh
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Product"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        if (!error) {
+            self.products = [Helper transformArray:objects ofClass:[Product class]];
+            [self.collectionView reloadData];
+        } else {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Erro", @"") message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+    }];
+}
+
+- (void)openFilter
+{
+    
 }
 
 #pragma mark - Collection View data source / delegate
