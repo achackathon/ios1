@@ -39,6 +39,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TRCurrencyTextField-TRCurrencyTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TRCurrencyTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -47,12 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>16B719ECC3436EA12EECA8432460E13E</key>
+		<key>223D4E9D5E5760E2302EB0E9DDD224FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20B2801AA7BB77239D1A1174ED38C097</key>
+		<key>41B4B185BE2004D3876AAF1B54BE14CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6CFD27D22B741FD0DFEF93193BDA7B79</key>
+		<key>605DCCC915F29D11038306C8273F8A9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A05C4BBDB344FB64BD54D1E6AA89DFE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,6 +88,11 @@
 			<true/>
 		</dict>
 		<key>D0D0C9D20C43FA94D4C88FBFE2601B8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D111F8CF0C628E10FE1772D1C4FEAFA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

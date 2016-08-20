@@ -45,6 +45,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.translucent = NO;
+    
     UIColor *borderColor = [UIColor colorWithRed:189.0 / 255.0 green:193.0 / 255.0 blue:204.0 / 255.0 alpha:1.0];
     
     _productDescription.layer.borderWidth = 0.5f;

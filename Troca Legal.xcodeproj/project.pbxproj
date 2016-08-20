@@ -19,12 +19,12 @@
 		0E24D8CB1D688F4D00212303 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8CA1D688F4D00212303 /* History.m */; };
 		0E24D8CE1D68C5DD00212303 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8CD1D68C5DD00212303 /* Image.m */; };
 		0E24D8D21D68E77900212303 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8D01D68E77900212303 /* ProfileViewController.m */; };
+		2F813B471D68DEE000F35E4C /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F813B461D68DEE000F35E4C /* NewProductViewController.m */; };
 		849700D31D68E1B7000E82B4 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D21D68E1B7000E82B4 /* ImageCell.m */; };
 		849700D61D68E784000E82B4 /* PATextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D51D68E784000E82B4 /* PATextField.m */; };
 		849700D91D68E889000E82B4 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D81D68E889000E82B4 /* FilterViewController.m */; };
 		849700DC1D68E8A8000E82B4 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700DB1D68E8A8000E82B4 /* Filter.m */; };
 		849700DF1D68F48E000E82B4 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700DE1D68F48E000E82B4 /* PurchaseViewController.m */; };
-		2F813B471D68DEE000F35E4C /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F813B461D68DEE000F35E4C /* NewProductViewController.m */; };
 		84CEBCB11D688A97008D75A7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEBCB01D688A97008D75A7 /* LoginViewController.m */; };
 		84CEBCBC1D688E3D008D75A7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCB21D688E3D008D75A7 /* OpenSans-Bold.ttf */; };
 		84CEBCBD1D688E3D008D75A7 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCB31D688E3D008D75A7 /* OpenSans-BoldItalic.ttf */; };
@@ -290,7 +290,6 @@
 					0E24D8A11D687F3400212303 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6D995M6B5M;
-						DevelopmentTeam = CPR2D2WM47;
 					};
 				};
 			};
@@ -521,9 +520,9 @@
 			baseConfigurationReference = B034C46C8DBA0ECBD399FA14 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6D995M6B5M;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6D995M6B5M;
 				INFOPLIST_FILE = "Troca Legal/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -538,9 +537,9 @@
 			baseConfigurationReference = 5BA01D0C128589EBAE2F9A43 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6D995M6B5M;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6D995M6B5M;
 				INFOPLIST_FILE = "Troca Legal/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
