@@ -10,14 +10,18 @@
 
 @implementation History
 
-- (void)initOBject:(PFObject *)pfObject {
-    self.uuid = pfObject.objectId;
-    
-    PFObject *userObject  = [pfObject objectForKey:@"user"];
-    [self.user initOBject:userObject];
-    
-    PFObject *productObject  = [pfObject objectForKey:@"product"];
-    [self.product initOBject:productObject];
+- (instancetype)initWithObject:(PFObject *)pfObject {
+    self = [super init];
+    if (self) {
+        self.uuid = pfObject.objectId;
+        
+        PFObject *userObject  = [pfObject objectForKey:@"user"];
+        self.user = [[User alloc] initWithObject:userObject];
+        
+        PFObject *productObject  = [pfObject objectForKey:@"product"];
+        self.product = [[Product alloc] initWithObject:productObject];
+    }
+    return self;
 }
 
 @end

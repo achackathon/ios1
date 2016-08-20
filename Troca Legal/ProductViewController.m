@@ -7,12 +7,16 @@
 //
 
 #import "ProductViewController.h"
+#import "PurchaseViewController.h"
 
 #import "UIImageView+WebCache.h"
+#import "ImageCell.h"
 
 #import "Product.h"
 
-@interface ProductViewController ()
+#import "Filter.h"
+
+@interface ProductViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *imagesScrollView;
 @property (weak, nonatomic) IBOutlet UIView *imagesScrollViewContentView;
@@ -30,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
+@property (strong, nonatomic) Filter *filter;
+
 @end
 
 @implementation ProductViewController
@@ -37,28 +43,91 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.view layoutIfNeeded];
+    
+    [self setupUI];
+    
+    self.title = @"Produto";
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+- (IBAction)goBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)setupUI
 {
-    [self addImageViews];
-    self.imagesPageControl.numberOfPages = self.product.url.count;
+    if (self.product.images.count == 1) {
+        self.imagesPageControl.numberOfPages = 0;
+    } else {
+        self.imagesPageControl.numberOfPages = self.product.images.count;
+    }
     
     self.nameLabel.text = self.product.name;
     
     NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
     numberFormatter.decimalSeparator = @",";
     numberFormatter.maximumFractionDigits = 2;
+    
+    if (self.product.isForSell) {
+        self.priceLabel.text = [NSString stringWithFormat:@"R$%@", [numberFormatter stringFromNumber:self.product.price]];
+        [self.actionButton setTitle:NSLocalizedString(@"COMPRAR", @"") forState:UIControlStateNormal];
+    } else if (self.product.isForRent) {
+        self.priceLabel.text = [NSString stringWithFormat:@"R$%@ / %@", [numberFormatter stringFromNumber:self.product.price], self.product.rentFrequency];
+        [self.actionButton setTitle:NSLocalizedString(@"ALUGAR", @"") forState:UIControlStateNormal];
+    }
+    
+    self.descriptionLabel.text = self.product.productDescription;
+    
+    if ([self.product.category.name isEqualToString:@"Muletas"]) {
+        self.typeImageView.image = [UIImage imageNamed:@"two-crutches"];
+    } else if ([self.product.category.name isEqualToString:@"Cadeira de Rodas"]) {
+        self.typeImageView.image = [UIImage imageNamed:@"wheelchair"];
+    }
+    
+    self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.product.seller.name, self.product.seller.lastName];
+    self.locationLabel.text = self.product.seller.location;
+    
+    [self.userImageView sd_setImageWithURL:self.product.seller.imageURL];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"purchase"]) {
+        PurchaseViewController *purchaseViewController = segue.destinationViewController;
+        purchaseViewController.product = self.product;
+    }
 }
 
 - (void)addImageViews
 {
     UIImageView *previousImageView;
     
-    for (NSURL *imageURL in self.product.url) {
+    for (Image *image in self.product.images) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         imageView.translatesAutoresizingMaskIntoConstraints = NO;
-        [imageView sd_setImageWithURL:imageURL];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        [imageView sd_setImageWithURL:image.url];
         
         [self.imagesScrollViewContentView addSubview:imageView];
         
@@ -78,7 +147,7 @@
                                                              toItem:previousImageView
                                                           attribute:NSLayoutAttributeLeft
                                                          multiplier:1.f
-                                                           constant:.0f];
+                                                           constant:.0f];   
         }
         
         NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:imageView
@@ -88,7 +157,6 @@
                                                                          attribute:NSLayoutAttributeTop
                                                                         multiplier:1.f
                                                                           constant:.0f];
-    
         
         NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:imageView
                                                                             attribute:NSLayoutAttributeBottom
@@ -98,9 +166,18 @@
                                                                            multiplier:1.f
                                                                              constant:.0f];
         
-        [self.imagesScrollViewContentView addConstraints:@[leftConstraint, topConstraint, bottomConstraint]];
+        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:imageView
+                                                                           attribute:NSLayoutAttributeWidth
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.imagesScrollView
+                                                                           attribute:NSLayoutAttributeWidth
+                                                                          multiplier:1.f
+                                                                            constant:.0f];
         
-        if (imageURL == self.product.url.lastObject) {
+        [self.imagesScrollViewContentView addConstraints:@[leftConstraint, topConstraint, bottomConstraint]];
+        [self.imagesScrollView addConstraint:widthConstraint];
+        
+        if (image == self.product.images.lastObject) {
             NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:imageView
                                                                                attribute:NSLayoutAttributeRight
                                                                                relatedBy:NSLayoutRelationEqual
@@ -114,6 +191,34 @@
         
         previousImageView = imageView;
     }
+}
+
+#pragma mark - Collection View data source / delegate
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.product.images.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.width);
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ImageCell" forIndexPath:indexPath];
+    cell.imageURL = self.product.images[indexPath.row].url;
+    
+    return cell;
+}
+
+#pragma mark - Scroll View delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSUInteger page = roundf(scrollView.contentOffset.x / self.view.frame.size.width);
+    self.imagesPageControl.currentPage = page;
 }
 
 @end

@@ -7,14 +7,23 @@
 //
 
 #import "User.h"
+#import <Parse/Parse.h>
 
 @implementation User
 
-- (void)initOBject:(PFObject *)pfObject {
-    self.uuid = pfObject.objectId;
-    self.name = pfObject[@"name"];
-    self.name = pfObject[@"lastName"];
-    self.name = pfObject[@"email"];
+- (instancetype)initWithObject:(PFObject *)pfObject {
+    self = [super init];
+    if (self) {
+        self.uuid = pfObject.objectId;
+        self.name = pfObject[@"name"];
+        self.lastName = pfObject[@"lastname"];
+        self.email = pfObject[@"email"];
+        self.location = pfObject[@"location"];
+        
+        PFFile *imageFile = [pfObject objectForKey:@"picture"];
+        self.imageURL = [NSURL URLWithString:imageFile.url];
+    }
+    return self;
 }
 
 @end

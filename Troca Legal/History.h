@@ -17,6 +17,6 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Product *product;
 
-- (void) initOBject:(PFObject*) pfObject;
+- (instancetype)initWithObject:(PFObject *)pfObject;
 
 @end
