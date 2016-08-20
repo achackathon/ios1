@@ -1,5 +1,5 @@
 //
-//  ProductCell.h
+//  ProductViewController.h
 //  Troca Legal
 //
 //  Created by Jota Melo on 20/08/16.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class Product;
-
-@interface ProductCell : UICollectionViewCell
-
-@property (strong, nonatomic) Product *product;
+@interface ProductViewController : UIViewController
 
 @end

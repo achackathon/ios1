@@ -29,6 +29,9 @@
 		84CEBCC41D688E3D008D75A7 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCBA1D688E3D008D75A7 /* OpenSans-Semibold.ttf */; };
 		84CEBCC51D688E3D008D75A7 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCBB1D688E3D008D75A7 /* OpenSans-SemiboldItalic.ttf */; };
 		84CEBCCA1D6893E0008D75A7 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEBCC91D6893E0008D75A7 /* ProductCell.m */; };
+		84CEBCCD1D689856008D75A7 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEBCCC1D689856008D75A7 /* ProductsViewController.m */; };
+		84CEBCD11D68A1A7008D75A7 /* PAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEBCD01D68A1A7008D75A7 /* PAImageView.m */; };
+		84CEBCD41D68A476008D75A7 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEBCD31D68A476008D75A7 /* ProductViewController.m */; };
 		9D822E71629C7AE8816485A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A951DEC5C963821124A144 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,12 @@
 		84CEBCBB1D688E3D008D75A7 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		84CEBCC81D6893E0008D75A7 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
 		84CEBCC91D6893E0008D75A7 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		84CEBCCB1D689856008D75A7 /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		84CEBCCC1D689856008D75A7 /* ProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
+		84CEBCCF1D68A1A7008D75A7 /* PAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAImageView.h; sourceTree = "<group>"; };
+		84CEBCD01D68A1A7008D75A7 /* PAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAImageView.m; sourceTree = "<group>"; };
+		84CEBCD21D68A476008D75A7 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		84CEBCD31D68A476008D75A7 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
 		A4A951DEC5C963821124A144 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B034C46C8DBA0ECBD399FA14 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,13 +121,18 @@
 		0E24D8A41D687F3400212303 /* Troca Legal */ = {
 			isa = PBXGroup;
 			children = (
-				0E24D8BC1D68875100212303 /* model */,
+				0E24D8BC1D68875100212303 /* Models */,
 				0E24D8A81D687F3400212303 /* AppDelegate.h */,
 				0E24D8A91D687F3400212303 /* AppDelegate.m */,
 				0E24D8AE1D687F3400212303 /* Main.storyboard */,
+				84CEBCCE1D68A177008D75A7 /* Components */,
 				84CEBCC71D6893C9008D75A7 /* Cells */,
 				84CEBCAF1D688A97008D75A7 /* LoginViewController.h */,
 				84CEBCB01D688A97008D75A7 /* LoginViewController.m */,
+				84CEBCCB1D689856008D75A7 /* ProductsViewController.h */,
+				84CEBCCC1D689856008D75A7 /* ProductsViewController.m */,
+				84CEBCD21D68A476008D75A7 /* ProductViewController.h */,
+				84CEBCD31D68A476008D75A7 /* ProductViewController.m */,
 				0E24D8B11D687F3400212303 /* Assets.xcassets */,
 				0E24D8B31D687F3400212303 /* LaunchScreen.storyboard */,
 				0E24D8B61D687F3400212303 /* Info.plist */,
@@ -136,7 +150,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0E24D8BC1D68875100212303 /* model */ = {
+		0E24D8BC1D68875100212303 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				0E24D8BD1D68878300212303 /* Brand.h */,
@@ -150,7 +164,7 @@
 				0E24D8C91D688F4D00212303 /* History.h */,
 				0E24D8CA1D688F4D00212303 /* History.m */,
 			);
-			name = model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		84CEBCC61D688E40008D75A7 /* Fonts */ = {
@@ -177,6 +191,15 @@
 				84CEBCC91D6893E0008D75A7 /* ProductCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		84CEBCCE1D68A177008D75A7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				84CEBCCF1D68A1A7008D75A7 /* PAImageView.h */,
+				84CEBCD01D68A1A7008D75A7 /* PAImageView.m */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		8F800C0E2D4761B70A1BC9A8 /* Frameworks */ = {
@@ -318,10 +341,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CEBCCD1D689856008D75A7 /* ProductsViewController.m in Sources */,
+				84CEBCD11D68A1A7008D75A7 /* PAImageView.m in Sources */,
 				0E24D8C81D688AB700212303 /* User.m in Sources */,
 				0E24D8BF1D68878300212303 /* Brand.m in Sources */,
 				0E24D8C21D6888A600212303 /* Category.m in Sources */,
 				0E24D8C51D6888DA00212303 /* Product.m in Sources */,
+				84CEBCD41D68A476008D75A7 /* ProductViewController.m in Sources */,
 				0E24D8AA1D687F3400212303 /* AppDelegate.m in Sources */,
 				84CEBCCA1D6893E0008D75A7 /* ProductCell.m in Sources */,
 				0E24D8CB1D688F4D00212303 /* History.m in Sources */,
