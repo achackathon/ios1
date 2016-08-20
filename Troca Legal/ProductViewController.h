@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Product;
+
 @interface ProductViewController : UIViewController
+
+@property (strong, nonatomic) Product *product;
 
 @end

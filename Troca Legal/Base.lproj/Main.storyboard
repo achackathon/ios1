@@ -204,10 +204,10 @@ watches</string>
             </objects>
             <point key="canvasLocation" x="1333.5" y="167.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Product View Controller-->
         <scene sceneID="vaD-sb-8S3">
             <objects>
-                <viewController id="mPD-Uh-RFP" sceneMemberID="viewController">
+                <viewController id="mPD-Uh-RFP" customClass="ProductViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xsj-gy-Rqa"/>
                         <viewControllerLayoutGuide type="bottom" id="k55-eZ-yuD"/>
@@ -461,6 +461,19 @@ watches</string>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="actionButton" destination="k5g-Ly-qCw" id="E1N-zs-3gV"/>
+                        <outlet property="descriptionLabel" destination="buT-go-DqI" id="xu0-7e-Jmq"/>
+                        <outlet property="imagesPageControl" destination="MLe-3G-0BQ" id="5TZ-7d-lQF"/>
+                        <outlet property="imagesScrollView" destination="A19-Cz-l3t" id="7b4-Ok-tmE"/>
+                        <outlet property="imagesScrollViewContentView" destination="Lql-hF-p6b" id="H47-lR-kWD"/>
+                        <outlet property="locationLabel" destination="KKG-2M-lqy" id="au4-O5-ff3"/>
+                        <outlet property="nameLabel" destination="Q8h-yO-n7u" id="teU-r3-8eu"/>
+                        <outlet property="priceLabel" destination="yFB-dB-CJd" id="i40-dW-dr3"/>
+                        <outlet property="typeImageView" destination="hhU-lY-d99" id="Lci-65-7GY"/>
+                        <outlet property="userImageView" destination="862-Zt-JMZ" id="RyK-8e-hQa"/>
+                        <outlet property="userNameLabel" destination="ARe-yj-fWn" id="t11-xD-Dip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwz-Tw-fly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
