@@ -46,6 +46,12 @@
     numberFormatter.maximumFractionDigits = 2;
     
     self.priceLabel.text = [NSString stringWithFormat:@"R$%@", [numberFormatter stringFromNumber:product.price]];
+    
+    if (product.isForRent) {
+        self.typeImageView.image = [UIImage imageNamed:@"rent"];
+    } else if (product.isForSell) {
+        self.typeImageView.image = [UIImage imageNamed:@"shopCart"];
+    }
 }
 
 @end

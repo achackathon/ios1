@@ -1,5 +1,6 @@
 PODS:
   - Bolts/Tasks (1.8.4)
+  - IQKeyboardManager (4.0.4)
   - MBProgressHUD (HEAD based on 1.0.0)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
@@ -9,6 +10,7 @@ PODS:
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - MBProgressHUD (HEAD)
   - Parse
   - SDWebImage
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  IQKeyboardManager: 4a6f83b540283c2645aaeba2bd8dc0f09b5c77f8
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91

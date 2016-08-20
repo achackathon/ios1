@@ -26,6 +26,7 @@
 @property (nonatomic, assign, getter=isForSell) BOOL forSell;
 @property (nonatomic, assign, getter=isForRent) BOOL forRent;
 @property (strong, nonatomic) Image *featuredImage;
+@property (strong, nonatomic) NSString *rentFrequency;
 
 @property (strong, nonatomic) NSMutableArray<Image *> *images;
 

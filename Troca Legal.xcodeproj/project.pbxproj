@@ -19,6 +19,10 @@
 		0E24D8CB1D688F4D00212303 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8CA1D688F4D00212303 /* History.m */; };
 		0E24D8CE1D68C5DD00212303 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D8CD1D68C5DD00212303 /* Image.m */; };
 		849700D31D68E1B7000E82B4 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D21D68E1B7000E82B4 /* ImageCell.m */; };
+		849700D61D68E784000E82B4 /* PATextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D51D68E784000E82B4 /* PATextField.m */; };
+		849700D91D68E889000E82B4 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700D81D68E889000E82B4 /* FilterViewController.m */; };
+		849700DC1D68E8A8000E82B4 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700DB1D68E8A8000E82B4 /* Filter.m */; };
+		849700DF1D68F48E000E82B4 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849700DE1D68F48E000E82B4 /* PurchaseViewController.m */; };
 		84CEBCB11D688A97008D75A7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEBCB01D688A97008D75A7 /* LoginViewController.m */; };
 		84CEBCBC1D688E3D008D75A7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCB21D688E3D008D75A7 /* OpenSans-Bold.ttf */; };
 		84CEBCBD1D688E3D008D75A7 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CEBCB31D688E3D008D75A7 /* OpenSans-BoldItalic.ttf */; };
@@ -62,6 +66,14 @@
 		5BA01D0C128589EBAE2F9A43 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		849700D11D68E1B7000E82B4 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		849700D21D68E1B7000E82B4 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		849700D41D68E784000E82B4 /* PATextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PATextField.h; sourceTree = "<group>"; };
+		849700D51D68E784000E82B4 /* PATextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PATextField.m; sourceTree = "<group>"; };
+		849700D71D68E889000E82B4 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		849700D81D68E889000E82B4 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		849700DA1D68E8A8000E82B4 /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		849700DB1D68E8A8000E82B4 /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
+		849700DD1D68F48E000E82B4 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
+		849700DE1D68F48E000E82B4 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		84CEBCAF1D688A97008D75A7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		84CEBCB01D688A97008D75A7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		84CEBCB21D688E3D008D75A7 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -142,8 +154,12 @@
 				84CEBCB01D688A97008D75A7 /* LoginViewController.m */,
 				84CEBCCB1D689856008D75A7 /* ProductsViewController.h */,
 				84CEBCCC1D689856008D75A7 /* ProductsViewController.m */,
+				849700D71D68E889000E82B4 /* FilterViewController.h */,
+				849700D81D68E889000E82B4 /* FilterViewController.m */,
 				84CEBCD21D68A476008D75A7 /* ProductViewController.h */,
 				84CEBCD31D68A476008D75A7 /* ProductViewController.m */,
+				849700DD1D68F48E000E82B4 /* PurchaseViewController.h */,
+				849700DE1D68F48E000E82B4 /* PurchaseViewController.m */,
 				0E24D8B11D687F3400212303 /* Assets.xcassets */,
 				0E24D8B31D687F3400212303 /* LaunchScreen.storyboard */,
 				0E24D8B61D687F3400212303 /* Info.plist */,
@@ -176,6 +192,8 @@
 				0E24D8CA1D688F4D00212303 /* History.m */,
 				0E24D8CC1D68C5DD00212303 /* Image.h */,
 				0E24D8CD1D68C5DD00212303 /* Image.m */,
+				849700DA1D68E8A8000E82B4 /* Filter.h */,
+				849700DB1D68E8A8000E82B4 /* Filter.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -213,6 +231,8 @@
 			children = (
 				84CEBCCF1D68A1A7008D75A7 /* PAImageView.h */,
 				84CEBCD01D68A1A7008D75A7 /* PAImageView.m */,
+				849700D41D68E784000E82B4 /* PATextField.h */,
+				849700D51D68E784000E82B4 /* PATextField.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -359,15 +379,19 @@
 			files = (
 				84CEBCCD1D689856008D75A7 /* ProductsViewController.m in Sources */,
 				849700D31D68E1B7000E82B4 /* ImageCell.m in Sources */,
+				849700D61D68E784000E82B4 /* PATextField.m in Sources */,
 				84CEBCD11D68A1A7008D75A7 /* PAImageView.m in Sources */,
 				0E24D8C81D688AB700212303 /* User.m in Sources */,
 				0E24D8BF1D68878300212303 /* Brand.m in Sources */,
 				0E24D8C21D6888A600212303 /* ProductCategory.m in Sources */,
+				849700DC1D68E8A8000E82B4 /* Filter.m in Sources */,
 				0E24D8C51D6888DA00212303 /* Product.m in Sources */,
 				0E24D8CE1D68C5DD00212303 /* Image.m in Sources */,
+				849700D91D68E889000E82B4 /* FilterViewController.m in Sources */,
 				84CEBCD41D68A476008D75A7 /* ProductViewController.m in Sources */,
 				0E24D8AA1D687F3400212303 /* AppDelegate.m in Sources */,
 				84CEBCCA1D6893E0008D75A7 /* ProductCell.m in Sources */,
+				849700DF1D68F48E000E82B4 /* PurchaseViewController.m in Sources */,
 				0E24D8CB1D688F4D00212303 /* History.m in Sources */,
 				0E24D8A71D687F3400212303 /* main.m in Sources */,
 				84CEBCB11D688A97008D75A7 /* LoginViewController.m in Sources */,

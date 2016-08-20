@@ -18,8 +18,9 @@
         self.name = pfObject[@"model"];
         self.productDescription = pfObject[@"productDescription"];
         self.price = @([[pfObject objectForKey:@"price"] doubleValue]);
-        self.forSell = @([[pfObject objectForKey:@"isForSell"] boolValue]);
-        self.forRent = @([[pfObject objectForKey:@"isForRent"] boolValue]);
+        self.forSell = [[pfObject objectForKey:@"isForBuy"] boolValue];
+        self.forRent = [[pfObject objectForKey:@"isForRent"] boolValue];
+        self.rentFrequency = pfObject[@"rentFrequency"];
         
         PFObject *categoryObject = [pfObject objectForKey:@"category"];
         self.category = [[ProductCategory alloc] initWithObject:categoryObject];

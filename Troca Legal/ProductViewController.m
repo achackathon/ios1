@@ -7,11 +7,14 @@
 //
 
 #import "ProductViewController.h"
+#import "PurchaseViewController.h"
 
 #import "UIImageView+WebCache.h"
 #import "ImageCell.h"
 
 #import "Product.h"
+
+#import "Filter.h"
 
 @interface ProductViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -31,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
+@property (strong, nonatomic) Filter *filter;
+
 @end
 
 @implementation ProductViewController
@@ -42,6 +47,22 @@
     [self.view layoutIfNeeded];
     
     [self setupUI];
+    
+    self.title = @"Produto";
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -56,8 +77,6 @@
 
 - (void)setupUI
 {
-//    [self addImageViews];
-    
     if (self.product.images.count == 1) {
         self.imagesPageControl.numberOfPages = 0;
     } else {
@@ -74,7 +93,7 @@
         self.priceLabel.text = [NSString stringWithFormat:@"R$%@", [numberFormatter stringFromNumber:self.product.price]];
         [self.actionButton setTitle:NSLocalizedString(@"COMPRAR", @"") forState:UIControlStateNormal];
     } else if (self.product.isForRent) {
-        self.priceLabel.text = [NSString stringWithFormat:@"R$%@ / dia", [numberFormatter stringFromNumber:self.product.price]];
+        self.priceLabel.text = [NSString stringWithFormat:@"R$%@ / %@", [numberFormatter stringFromNumber:self.product.price], self.product.rentFrequency];
         [self.actionButton setTitle:NSLocalizedString(@"ALUGAR", @"") forState:UIControlStateNormal];
     }
     
@@ -90,6 +109,14 @@
     self.locationLabel.text = self.product.seller.location;
     
     [self.userImageView sd_setImageWithURL:self.product.seller.imageURL];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"purchase"]) {
+        PurchaseViewController *purchaseViewController = segue.destinationViewController;
+        purchaseViewController.product = self.product;
+    }
 }
 
 - (void)addImageViews

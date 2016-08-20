@@ -8,6 +8,7 @@
 
 #import "ProductsViewController.h"
 #import "ProductViewController.h"
+#import "FilterViewController.h"
 
 #import "ProductCell.h"
 #import "MBProgressHUD.h"
@@ -15,6 +16,7 @@
 #import "Product.h"
 #import "Image.h"
 #import "Helper.h"
+#import "Filter.h"
 #import <Parse/Parse.h>
 
 static CGFloat const kCellSpacing = 17.f;
@@ -22,11 +24,13 @@ static CGFloat const kCellSpacing = 17.f;
 @interface ProductsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *noResultsLabel;
 
 @property (strong, nonatomic) NSArray<Product *> *products;
 @property (strong, nonatomic) NSArray<Image *> *images;
 
 @property (copy, nonatomic) void(^imagesCompletionBlock)();
+@property (strong, nonatomic) Filter *filter;
 
 @end
 
@@ -44,6 +48,7 @@ static CGFloat const kCellSpacing = 17.f;
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self refresh];
+    [self refreshImages];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -60,6 +65,22 @@ static CGFloat const kCellSpacing = 17.f;
     [query includeKey:@"brand"];
     [query includeKey:@"seller"];
     [query includeKey:@"featuredImage"];
+    
+    if (self.filter) {
+        if (self.filter.category) {
+            [query whereKey:@"category" equalTo:[PFObject objectWithoutDataWithClassName:@"Category" objectId:self.filter.category]];
+        }
+        
+        if (self.filter.brand) {
+            [query whereKey:@"brand" equalTo:[PFObject objectWithoutDataWithClassName:@"Brand" objectId:self.filter.brand]];
+        }
+        
+        if (self.filter.priceFrom && self.filter.priceTo) {
+            [query whereKey:@"price" greaterThanOrEqualTo:self.filter.priceFrom];
+            [query whereKey:@"price" lessThanOrEqualTo:self.filter.priceTo];
+        }
+    }
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -67,14 +88,20 @@ static CGFloat const kCellSpacing = 17.f;
         if (!error) {
             self.products = [Helper transformArray:objects ofClass:[Product class]];
             [self.collectionView reloadData];
+            
+            if (self.products.count == 0) {
+                self.noResultsLabel.hidden = NO;
+            } else {
+                self.noResultsLabel.hidden = YES;
+            }
+            
+            [self collectImages];
         } else {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Erro", @"") message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alertController animated:YES completion:nil];
         }
     }];
-    
-    [self refreshImages];
 }
 
 - (void)refreshImages
@@ -85,17 +112,7 @@ static CGFloat const kCellSpacing = 17.f;
         if (!error) {
             self.images = [Helper transformArray:objects ofClass:[Image class]];
             
-            for (Image *image in self.images) {
-                for (Product *product in self.products) {
-                    if ([product.uuid isEqualToString:image.productID]) {
-                        if (!product.images) {
-                            product.images = @[].mutableCopy;
-                        }
-                        
-                        [product.images addObject:image];
-                    }
-                }
-            }
+            [self collectImages];
         } else {
             [self refreshImages];
         }
@@ -106,9 +123,24 @@ static CGFloat const kCellSpacing = 17.f;
     }];
 }
 
+- (void)collectImages
+{
+    for (Image *image in self.images) {
+        for (Product *product in self.products) {
+            if ([product.uuid isEqualToString:image.productID]) {
+                if (!product.images) {
+                    product.images = @[].mutableCopy;
+                }
+                
+                [product.images addObject:image];
+            }
+        }
+    }
+}
+
 - (void)openFilter
 {
-    
+    [self performSegueWithIdentifier:@"filter" sender:nil];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
@@ -139,11 +171,14 @@ static CGFloat const kCellSpacing = 17.f;
         
         ProductViewController *productViewController = segue.destinationViewController;
         productViewController.product = cell.product;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
+    } else if ([segue.identifier isEqualToString:@"filter"]) {
+        FilterViewController *filterViewController = segue.destinationViewController;
+        filterViewController.completionBlock = ^(Filter *filter) {
+            self.filter = filter;
             
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-        });
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [self refresh];
+        };
     }
 }
 
